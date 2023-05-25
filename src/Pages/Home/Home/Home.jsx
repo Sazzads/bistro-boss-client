@@ -6,10 +6,14 @@ import PopularMenu from '../PopularMenu/PopularMenu';
 import ChefRecomand from '../ChefRecomand/ChefRecomand';
 import Featured from '../Featured/Featured';
 import Testimonials from '../Testimonials/Testimonials';
+import { Helmet, HelmetData } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div>
+             <Helmet>
+                <title>Bistro Boss | Home</title>
+            </Helmet>
             <Banner></Banner>
             <Category></Category>
                 <div className="hero min-h-screen " style={{ backgroundImage: `url(${bgImg})` }}>

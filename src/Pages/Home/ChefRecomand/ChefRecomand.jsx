@@ -12,7 +12,7 @@ const ChefRecomand = () => {
             })
     }, [])
     const displayeFood = recommand.slice(0, 3)
-    console.log(displayeFood);
+    // console.log(displayeFood);
 
     return (
         <div className='my-10'>
