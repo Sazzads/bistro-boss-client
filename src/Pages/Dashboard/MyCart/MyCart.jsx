@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import useCart from '../../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 
 const MyCart = () => {
-    const [cart,refetch] = useCart()
+    const [cart, refetch] = useCart()
     // console.log(cart);
 
     //how does reduce work
@@ -27,7 +28,7 @@ const MyCart = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        if (data.deletedCount>0) {
+                        if (data.deletedCount > 0) {
                             refetch()
                             Swal.fire(
                                 'Deleted!',
@@ -47,7 +48,7 @@ const MyCart = () => {
             <div className='uppercase font-semibold h-[60px] flex justify-evenly items-center'>
                 <h3 className='text-3xl'>total Items: {cart.length}</h3>
                 <h3 className='text-3xl'>total Price: ${total}</h3>
-                <button className="btn btn-warning btn-xs">Pay</button>
+                <Link to='/dashboard/payment'><button className="btn btn-warning btn-xs">Pay</button></Link>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
